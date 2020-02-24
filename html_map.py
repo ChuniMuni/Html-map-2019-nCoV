@@ -59,3 +59,10 @@ sliders = [dict(
     steps = steps
 )]
 
+# Making the first dataset visible
+fig.data[0].visible = True
+
+# Create a map and save it in HTML format
+fig.update_layout(sliders=sliders, title='Coronavirus Spreading Map'+'<br>geodose.com', height=600)
+fig.show()
+go_offline.plot(fig, filename='D:/html/map_ncov.html', validate=True, auto_open=False)
