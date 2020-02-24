@@ -41,3 +41,21 @@ for i in range(n_range):
     marker = dict(size=15, opacity=0.6, color='Red', symbol='circle'),
     ))
 
+# Slider code
+steps = []
+for i in range(len(fig.data)):
+    step = dict(
+        method = "restyle",
+        args = ["visible", [False] * len(fig.data)],
+        label = date_list[i],
+    )
+    step["args"][1][i] = True  # Switch i-th data set to visible
+    steps.append(step)
+
+sliders = [dict(
+    active = 0,
+    currentvalue = {"prefix": "Date: "},
+    pad = {"t": 1},
+    steps = steps
+)]
+
