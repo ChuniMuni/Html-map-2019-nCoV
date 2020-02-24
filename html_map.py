@@ -2,17 +2,19 @@ import plotly.offline as go_offline
 import plotly.graph_objects as go
 import pandas as pd
 
+pd.options.mode.chained_assignment = None # default='warn'
+
 url = 'https://docs.google.com/spreadsheets/d/18X1VM1671d99V_yd-cnUI1j8oSG2ZgfU_q1HfOizErA/export?format=csv&id'
 data = pd.read_csv(url)
 data = data.fillna(0)
 
 # Variable initialization
-fig=go.Figure()
+fig = go.Figure()
 col_name=data.columns
-n_col=len(data.columns)
-date_list=[]
-init=4
-n_range=int((n_col-5)/2)
+n_col = len(data.columns)
+date_list = []
+init = 4
+n_range = int((n_col-5)/2)
 
 # The cycle for data analysis and preparation
 for i in range(n_range):
