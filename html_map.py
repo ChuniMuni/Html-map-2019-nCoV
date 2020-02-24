@@ -8,6 +8,9 @@ url = 'https://docs.google.com/spreadsheets/d/18X1VM1671d99V_yd-cnUI1j8oSG2ZgfU_
 data = pd.read_csv(url)
 data = data.fillna(0)
 
+# Sample data output
+# print(data.head())
+
 # Variable initialization
 fig = go.Figure()
 col_name=data.columns
@@ -42,6 +45,9 @@ for i in range(n_range):
     mode = 'markers',
     marker = dict(size=15, opacity=0.6, color='Red', symbol='circle'),
     ))
+
+# Dataset output
+# print(fig.data)
 
 # Slider code
 steps = []
